@@ -1,0 +1,92 @@
+_schema-version: "3.2"
+ID: TravelExpensesApproval
+version: 0.0.1
+modules:
+- name: TravelExpensesApproval-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: TravelExpensesApproval-destination-service
+    parameters:
+      content-target: true
+  - name: TravelExpensesApproval_html_repo_host
+    parameters:
+      service-key:
+        name: TravelExpensesApproval_html_repo_host-key
+  - name: uaa_TravelExpensesApproval
+    parameters:
+      service-key:
+        name: uaa_TravelExpensesApproval-key
+  parameters:
+    content:
+      subaccount:
+        destinations:
+        - Name: travelexpensesapproval_TravelExpensesApproval_html_repo_host
+          ServiceInstanceName: TravelExpensesApproval-html5-app-host-service
+          ServiceKeyName: TravelExpensesApproval_html_repo_host-key
+          sap.cloud.service: travelexpensesapproval
+        - Authentication: OAuth2UserTokenExchange
+          Name: travelexpensesapproval_uaa_TravelExpensesApproval
+          ServiceInstanceName: TravelExpensesApproval-xsuaa-service
+          ServiceKeyName: uaa_TravelExpensesApproval-key
+          sap.cloud.service: travelexpensesapproval
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: TravelExpensesApproval-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: TravelExpensesApproval_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - travelexpensenspworkflowuimodule.zip
+      name: travelexpensenspworkflowuimodule
+      target-path: resources/
+- name: travelexpensenspworkflowuimodule
+  type: html5
+  path: workflow-ui-module
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: TravelExpensesApproval-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        subaccount:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: TravelExpensesApproval-destination-service
+    service-plan: lite
+- name: TravelExpensesApproval_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: TravelExpensesApproval-html5-app-host-service
+    service-plan: app-host
+- name: uaa_TravelExpensesApproval
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: TravelExpensesApproval-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
