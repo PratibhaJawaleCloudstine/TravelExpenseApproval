@@ -70,6 +70,9 @@ sap.ui.define(
           taskContextModel.attachRequestCompleted(() => {
             const travelExpenses = taskContextModel.getProperty("/travelExpenses") || [];
             this.setModel(new sap.ui.model.json.JSONModel(travelExpenses), "travelExpenses");
+
+              var travelDetails = taskContextModel.getProperty("/travelDetails") || {};
+             this.setModel(new sap.ui.model.json.JSONModel(travelDetails), "travelDetails");
           });
 
         },

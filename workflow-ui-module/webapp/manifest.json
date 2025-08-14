@@ -144,7 +144,7 @@
                     "title": "Travel Request Details",
                     "required": [],
                     "properties": {
-                        "TravelRequestId": {
+                        "travelDetailsId": {
                             "type": "string",
                             "title": "Travel Request ID",
                             "description": "Travel Request ID"
@@ -173,11 +173,6 @@
                             "type": "string",
                             "title": "Travel Place Of Visit",
                             "description": "Travel Place Of Visit"
-                        },
-                        "EmployeeId": {
-                            "type": "string",
-                            "title": "Employee Id",
-                            "description": "Employee ID"
                         }
                     }
                 },

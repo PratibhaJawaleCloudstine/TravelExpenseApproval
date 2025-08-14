@@ -36,27 +36,27 @@
                         <VBox id="_IDGenVBox2">
                             <Text
                                 id="_IDGenText2"
-                                text="Travel Request ID: {context>/travelDetails/TravelRequestId}"
+                                text="Travel Request ID: {travelDetails>/travelDetailsId}"
                             />
                             <Text
                                 id="_IDGenText221"
-                                text="Place Of Visit: {context>/travelDetails/TravelPlaceOfVisit}"
+                                text="Place Of Visit: {travelDetails>/TravelPlaceOfVisit}"
                             />
                             <Text
                                 id="_IDGenText21"
-                                text="Travel Start Date: {context>/travelDetails/TravelStartDate}"
+                                text="Travel Start Date: {travelDetails>/TravelStartDate}"
                             />
                             <Text
                                 id="_IDGenText22"
-                                text="Travel End Date: {context>/travelDetails/TravelStartDate}"
+                                text="Travel End Date: {travelDetails>/TravelStartDate}"
                             />
                              <Text
                                 id="_IDGenText23"
-                                text="Travel Departure: {context>/travelDetails/TravelDeparture}"
+                                text="Travel Departure: {travelDetails>/TravelDeparture}"
                             />
                             <Text
                                 id="_IDGenText24"
-                                text="Travel Arrival: {context>/travelDetails/TravelArrival}"
+                                text="Travel Arrival: {travelDetails>/TravelArrival}"
                             />
                           
                         </VBox>
@@ -67,7 +67,7 @@
                 <uxap:ObjectPageSection
                     titleUppercase="false"
                     id="invoice"
-                    title="Invoice Details"
+                    title="Travel Details"
                 >
                     <uxap:subSections>
                         <uxap:ObjectPageSubSection
@@ -109,7 +109,7 @@
                                                 >
                                                     <form:fields>
                                                         <Text
-                                                            text="{context>/travelDetails/TravelPlaceOfVisit}"
+                                                            text="{travelDetails>/TravelPlaceOfVisit}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
@@ -120,7 +120,7 @@
                                                 >
                                                     <form:fields>
                                                         <Text
-                                                            text="{context>/travelDetails/TravelStartDate}"
+                                                            text="{travelDetails>/TravelStartDate}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
@@ -130,14 +130,13 @@
                                                 >
                                                     <form:fields>
                                                         <Text
-                                                            text="{context>/travelDetails/TravelEndDate}"
+                                                            text="{travelDetails>/TravelEndDate}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
                                             </form:formElements>
                                         </form:FormContainer>
 
-                                        <!-- Bill TO -->
 
                                         <form:FormContainer
                                             id="travelAD"
@@ -150,7 +149,7 @@
                                                 >
                                                     <form:fields>
                                                         <Text
-                                                            text="{context>/travelDetails/TravelDeparture}"
+                                                            text="{travelDetails>/TravelDeparture}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
@@ -161,7 +160,7 @@
                                                 >
                                                     <form:fields>
                                                         <Text
-                                                            text="{context>/travelDetails/TravelDeparture}"
+                                                            text="{travelDetails>/TravelArrival}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
@@ -328,4 +327,3 @@
         </uxap:ObjectPageLayout>
     </App>
 </mvc:View>
-
