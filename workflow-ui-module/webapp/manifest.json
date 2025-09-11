@@ -5,7 +5,7 @@
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
-            "version": "0.0.1"
+            "version": "1.0.1"
         },
         "title": "{{ appTitle }}",
         "description": "{{ appDescription }}",
@@ -173,6 +173,36 @@
                             "type": "string",
                             "title": "Travel Place Of Visit",
                             "description": "Travel Place Of Visit"
+                        },
+                        "TravelEstimationCost": {
+                            "type": "string",
+                            "title": "Travel Estimation Cost",
+                            "description": "Travel Estimation Cost"
+                        },
+                        "TravelSelfTravel": {
+                            "type": "string",
+                            "title": "Self Travel",
+                            "description": "Self Travel"
+                        },
+                        "TravelPurposeOfTravel": {
+                            "type": "string",
+                            "title": "Purpose of Travel",
+                            "description": "Purpose of Travel"
+                        },
+                        "TravelEmployeeId": {
+                            "type": "string",
+                            "title": "Travel Employee Id",
+                            "description": "Travel Employee Id"
+                        },
+                        "TravelEmployeeEmail": {
+                            "type": "string",
+                            "title": "Travel Employee Email",
+                            "description": "Travel Employee Email"
+                        },
+                        "TravelEmployeeName": {
+                            "type": "string",
+                            "title": "Travel Employee Name",
+                            "description": "Travel Employee Name"
                         }
                     }
                 },

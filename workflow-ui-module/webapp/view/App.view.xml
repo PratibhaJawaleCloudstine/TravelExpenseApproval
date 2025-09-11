@@ -58,6 +58,18 @@
                                 id="_IDGenText24"
                                 text="Travel Arrival: {travelDetails>/TravelArrival}"
                             />
+                            <Text
+                                id="_IDGenText25"
+                                text="Travel Estimation Cost: {travelDetails>/TravelEstimationCost}"
+                            />
+                            <Text
+                                id="_IDGenText26"
+                                text="Self Travel: {travelDetails>/TravelSelfTravel}"
+                            />
+                            <Text
+                                id="_IDGenText27"
+                                text="Purpose Of Travel: {travelDetails>/TravelPurposeOfTravel}"
+                            />
                           
                         </VBox>
                     </uxap:snappedContent>
@@ -81,38 +93,28 @@
                                 >
                                     <form:layout>
                                         <form:ResponsiveGridLayout
-                                            id="_IDGenResponsiveGridLayout1"
                                             labelSpanXL="3"
                                             labelSpanL="3"
                                             labelSpanM="3"
                                             labelSpanS="12"
                                             adjustLabelSpan="false"
-                                            emptySpanXL="4"
-                                            emptySpanL="4"
-                                            emptySpanM="4"
+                                            emptySpanXL="0"
+                                            emptySpanL="0"
+                                            emptySpanM="0"
                                             emptySpanS="0"
                                             columnsXL="1"
                                             columnsL="1"
                                             columnsM="1"
-                                            singleContainerFullSize="false"
+                                            singleContainerFullSize="true"
                                         />
                                     </form:layout>
                                     <form:formContainers>
                                         <form:FormContainer
                                             id="Travel"
-                                            title="Travel Details"
+                                            title="Genaral Information"
                                         >
                                             <form:formElements>
-                                                <form:FormElement
-                                                    id="_IDGenFormElement1"
-                                                    label="Place Of Visit"
-                                                >
-                                                    <form:fields>
-                                                        <Text
-                                                            text="{travelDetails>/TravelPlaceOfVisit}"
-                                                        />
-                                                    </form:fields>
-                                                </form:FormElement>
+                                                
 
                                                 <form:FormElement
                                                     id="_IDGenFormElement2"
@@ -134,17 +136,8 @@
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
-                                            </form:formElements>
-                                        </form:FormContainer>
-
-
-                                        <form:FormContainer
-                                            id="travelAD"
-                                            title="Travel A/D Details"
-                                        >
-                                            <form:formElements>
-                                                <form:FormElement
-                                                    id="_IDGenFormElement4"
+                                                 <form:FormElement
+                                                    id="_IDGenFormElement7"
                                                     label="Travel Departure"
                                                 >
                                                     <form:fields>
@@ -155,12 +148,62 @@
                                                 </form:FormElement>
 
                                                 <form:FormElement
-                                                    id="_IDGenFormElement3"
+                                                    id="_IDGenFormElement8"
                                                     label="Travel Arrival"
                                                 >
                                                     <form:fields>
                                                         <Text
                                                             text="{travelDetails>/TravelArrival}"
+                                                        />
+                                                    </form:fields>
+                                                </form:FormElement>
+                                                <form:FormElement
+                                                    id="_IDGenFormElement1"
+                                                    label="Place Of Visit"
+                                                >
+                                                    <form:fields>
+                                                        <Text
+                                                            text="{travelDetails>/TravelPlaceOfVisit}"
+                                                        />
+                                                    </form:fields>
+                                                </form:FormElement>
+                                                <form:FormElement
+                                                    id="_IDGenFormElement9"
+                                                    label="Self Travel"
+                                                >
+                                                    <form:fields>
+                                                        <Text
+                                                            text="{travelDetails>/TravelSelfTravel}"
+                                                        />
+                                                    </form:fields>
+                                                </form:FormElement>
+                                            </form:formElements>
+                                        </form:FormContainer>
+
+
+                                        <form:FormContainer
+                                            id="travelAD"
+                                            title="Additional Information"
+                                        >
+                                            <form:formElements>
+                                                <form:FormElement
+                                                    id="_IDGenFormElement4"
+                                                    label="Purpose of Travel"
+                                                >
+                                                    <form:fields>
+                                                        <Text
+                                                            text="{travelDetails>/TravelPurposeOfTravel}"
+                                                        />
+                                                    </form:fields>
+                                                </form:FormElement>
+
+                                                <form:FormElement
+                                                    id="_IDGenFormElement3"
+                                                    label="Estimated Cost"
+                                                >
+                                                    <form:fields>
+                                                        <Text
+                                                            text="{travelDetails>/TravelEstimationCost}"
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
@@ -177,9 +220,19 @@
                             id="_IDGenObjectPageSubSection2"
                         >
                             <uxap:blocks>
+
+                            <VBox >
+
+                                 <Title id="id_header"
+                                    text="Expenses Details"
+                                    level="H4"   
+                                    titleStyle="H4"
+                                    class = "sapUiSmallMarginTop" />
+
                                 <HBox
                                     id="_IDGenHBox1"
                                     width="100%"
+                                    class = "sapUiSmallMarginTop"
                                 >
                                     <Table
                                         id="travelExpensesTable"
@@ -235,6 +288,7 @@
                                         </items>
                                     </Table>
                                 </HBox>
+                            </VBox>
                             </uxap:blocks>
                         </uxap:ObjectPageSubSection>
 
