@@ -1,6 +1,5 @@
 <mvc:View
     controllerName="travelexpensensp.workflowuimodule.controller.App"
-    
     xmlns:core="sap.ui.core"
     xmlns:commons="sap.suite.ui.commons"
     xmlns:html="http://www.w3.org/1999/xhtml"
@@ -26,11 +25,7 @@
                 <uxap:ObjectPageDynamicHeaderTitle
                     id="_IDGenObjectPageDynamicHeaderTitle1"
                 >
-                
-
-                    <uxap:expandedContent>
-                       
-                    </uxap:expandedContent>
+                    <uxap:expandedContent />
 
                     <uxap:snappedContent>
                         <VBox id="_IDGenVBox2">
@@ -50,7 +45,7 @@
                                 id="_IDGenText22"
                                 text="Travel End Date: {travelDetails>/TravelStartDate}"
                             />
-                             <Text
+                            <Text
                                 id="_IDGenText23"
                                 text="Travel Departure: {travelDetails>/TravelDeparture}"
                             />
@@ -70,7 +65,6 @@
                                 id="_IDGenText27"
                                 text="Purpose Of Travel: {travelDetails>/TravelPurposeOfTravel}"
                             />
-                          
                         </VBox>
                     </uxap:snappedContent>
                 </uxap:ObjectPageDynamicHeaderTitle>
@@ -86,7 +80,6 @@
                             id="_IDGenObjectPageSubSection1"
                         >
                             <uxap:blocks>
-                               
                                 <form:Form
                                     id="_IDGenForm1"
                                     width="100%"
@@ -114,8 +107,6 @@
                                             title="Genaral Information"
                                         >
                                             <form:formElements>
-                                                
-
                                                 <form:FormElement
                                                     id="_IDGenFormElement2"
                                                     label="Start Date"
@@ -126,7 +117,7 @@
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
-                                                 <form:FormElement
+                                                <form:FormElement
                                                     id="_IDGenFormElement5"
                                                     label="End Date"
                                                 >
@@ -136,7 +127,7 @@
                                                         />
                                                     </form:fields>
                                                 </form:FormElement>
-                                                 <form:FormElement
+                                                <form:FormElement
                                                     id="_IDGenFormElement7"
                                                     label="Travel Departure"
                                                 >
@@ -180,7 +171,6 @@
                                             </form:formElements>
                                         </form:FormContainer>
 
-
                                         <form:FormContainer
                                             id="travelAD"
                                             title="Additional Information"
@@ -209,8 +199,6 @@
                                                 </form:FormElement>
                                             </form:formElements>
                                         </form:FormContainer>
-
-                              
                                     </form:formContainers>
                                 </form:Form>
                             </uxap:blocks>
@@ -220,161 +208,174 @@
                             id="_IDGenObjectPageSubSection2"
                         >
                             <uxap:blocks>
-
-                            <VBox >
-
-                                 <Title id="id_header"
-                                    text="Expenses Details"
-                                    level="H4"   
-                                    titleStyle="H4"
-                                    class = "sapUiSmallMarginTop" />
-
-                                <HBox
-                                    id="_IDGenHBox1"
-                                    width="100%"
-                                    class = "sapUiSmallMarginTop"
+                                <IconTabBar
+                                    id="iconTabBar"
+                                    expandable="false"
+                                    selectedKey="Info"
+                                    class="sapUiSmallMargin whiteBackground"
                                 >
-                                    <Table
-                                        id="travelExpensesTable"
-                                        items="{path: 'travelExpenses>/'}"
-                                        width="100%"
-                                    >
-                                        <columns>
-                                           
-                                            <Column id="ExpenseTypeColumn">
-                                                <Text
-                                                    id="ExpenseTypeHeader"
-                                                    text="Expense Type"
+                                    <!-- Info Tab -->
+                                    <items>
+                                        <IconTabFilter
+                                            key="expenses"
+                                            icon="sap-icon://expense-report"
+                                            text="Expenses"
+                                        >
+                                            <VBox class= "whiteBackground"  backgroundDesign="Solid">
+                                                <Title
+                                                    id="id_header"
+                                                    text="Expenses Details"
+                                                    level="H4"
+                                                    titleStyle="H4"
+                                                    class="sapUiSmallMarginTop"
                                                 />
-                                            </Column>
-                                           
-                                            <Column id="receiptAmountColumn">
-                                                <Text
-                                                    id="receiptAmountHeader"
-                                                    text="receipt Amount"
-                                                />
-                                            </Column>
-                                            <Column id="receiptDateColumn">
-                                                <Text
-                                                    id="receiptDateHeader"
-                                                    text="receipt Date"
-                                                />
-                                            </Column>
-                                            
-                                            
-                                        </columns>
-                                        <items>
-                                            <ColumnListItem
-                                                id="_IDGenColumnListItem1"
+
+                                                <HBox
+                                                    id="_IDGenHBox1"
+                                                    width="100%"
+                                                    class="sapUiSmallMarginTop"
+                                                >
+                                                    <Table
+                                                        id="travelExpensesTable"
+                                                        items="{path: 'travelExpenses>/'}"
+                                                        width="100%"
+                                                    >
+                                                        <columns>
+                                                            <Column
+                                                                id="ExpenseTypeColumn"
+                                                            >
+                                                                <Text
+                                                                    id="ExpenseTypeHeader"
+                                                                    text="Expense Type"
+                                                                />
+                                                            </Column>
+
+                                                            <Column
+                                                                id="receiptAmountColumn"
+                                                            >
+                                                                <Text
+                                                                    id="receiptAmountHeader"
+                                                                    text="receipt Amount"
+                                                                />
+                                                            </Column>
+                                                            <Column
+                                                                id="receiptDateColumn"
+                                                            >
+                                                                <Text
+                                                                    id="receiptDateHeader"
+                                                                    text="receipt Date"
+                                                                />
+                                                            </Column>
+                                                        </columns>
+                                                        <items>
+                                                            <ColumnListItem
+                                                                id="_IDGenColumnListItem1"
+                                                            >
+                                                                <cells>
+                                                                    <Text
+                                                                        id="expenseTypecell"
+                                                                        text="{travelExpenses>expenseType}"
+                                                                    />
+
+                                                                    <Text
+                                                                        id="receiptAmountcell"
+                                                                        text="{travelExpenses>receiptAmount}"
+                                                                    />
+                                                                    <Text
+                                                                        id="receiptDatecell"
+                                                                        text="{travelExpenses>receiptDate}"
+                                                                    />
+                                                                </cells>
+                                                            </ColumnListItem>
+                                                        </items>
+                                                    </Table>
+                                                </HBox>
+                                            </VBox>
+                                        </IconTabFilter>
+
+                                        <!-- Attachments Tab -->
+                                        <IconTabFilter
+                                            key="Attachments"
+                                            icon="sap-icon://attachment"
+                                            text="Attachments"
+
                                             >
-                                                <cells>
-                                                    
-                                                    <Text
-                                                        id="expenseTypecell"
-                                                        text="{travelExpenses>expenseType}"
-                                                    />
-                                                    
-                                                    <Text
-                                                        id="receiptAmountcell"
-                                                        text="{travelExpenses>receiptAmount}"
-                                                    />
-                                                    <Text
-                                                        id="receiptDatecell"
-                                                        text="{travelExpenses>receiptDate}"
-                                                    />
-                                                 
-                                                </cells>
-                                            </ColumnListItem>
-                                        </items>
-                                    </Table>
-                                </HBox>
-                            </VBox>
+                                            <VBox class="whiteBackground"  backgroundDesign="Solid">
+                                                <Title
+                                                    text="Expenses Attachments"
+                                                    level="H4"
+                                                    titleStyle="H4"
+                                                    class="sapUiSmallMarginTop"
+                                                />
+
+                                                <HBox
+                                                    id="_IDGenHBox2"
+                                                    width="100%"
+                                                    class="sapUiTinyMarginTop"
+                                                >
+                                                    <List
+                                                        items="{travelExpenses>/}"
+                                                    >
+                                                        <CustomListItem>
+                                                            <VBox class="sapUiMediumMarginTop roundedWhiteBox">
+                                                                <Title
+                                                                    text="Expense: {travelExpenses>expenseType}"
+                                                                    level="H6"
+                                                                    titleStyle="H6"
+                                                                />
+
+                                                                <Table class="sapUiSmallMarginTop"
+                                                                    items="{travelExpenses>attachments}"
+                                                                >
+                                                                    <columns>
+                                                                        <Column>
+                                                                            <Text
+                                                                                text="File Name"
+                                                                            />
+                                                                        </Column>
+                                                                        <Column>
+                                                                            <Text
+                                                                                text="Type"
+                                                                            />
+                                                                        </Column>
+                                                                        <Column>
+                                                                            <Text
+                                                                                text="Size"
+                                                                            />
+                                                                        </Column>
+                                                                    </columns>
+                                                                    <items>
+                                                                        <ColumnListItem
+                                                                        >
+                                                                            <cells
+                                                                            >
+                                                                                <Text
+                                                                                    text="{travelExpenses>name}"
+                                                                                />
+                                                                                <Text
+                                                                                    text="{travelExpenses>type}"
+                                                                                />
+                                                                                <Text
+                                                                                    text="{travelExpenses>size}"
+                                                                                />
+                                                                            </cells>
+                                                                        </ColumnListItem>
+                                                                    </items>
+                                                                </Table>
+                                                            </VBox>
+                                                        </CustomListItem>
+                                                    </List>
+                                                </HBox>
+                                            </VBox>
+
+                                  
+                                        </IconTabFilter>
+                                    </items>
+                                </IconTabBar>
                             </uxap:blocks>
                         </uxap:ObjectPageSubSection>
 
-  <!--   
-
-                        <uxap:ObjectPageSubSection
-                            id="_IDGenObjectPageSubSection3"
-                        >
-                            <HBox
-                                id="_IDGenHBox2"
-                                width="100%"
-                            >
-                                <FlexBox
-                                    id="taxFlexContainer"
-                                    alignContent="Center"
-                                    justifyContent="End"
-                                    width="100%"
-                                >
-                                    <form:SimpleForm
-                                        id="_IDGenSimpleForm1"
-                                        editable="false"
-                                        layout="ResponsiveGridLayout"
-                                        labelSpanXL="3"
-                                        labelSpanL="3"
-                                        labelSpanM="3"
-                                        labelSpanS="12"
-                                        adjustLabelSpan="false"
-                                        emptySpanXL="4"
-                                        emptySpanL="4"
-                                        emptySpanM="4"
-                                        emptySpanS="0"
-                                        columnsXL="1"
-                                        columnsL="1"
-                                        columnsM="1"
-                                        singleContainerFullSize="false"
-                                    >
-                                        <Label
-                                            id="_IDGenLabel1"
-                                            text="Sub Total"
-                                        />
-                                        <Text
-                                            id="_IDGenText3"
-                                            text="{context>/invoiceDetails/subtotal}"
-                                        />
-
-                                        <Label
-                                            id="_IDGenLabel2"
-                                            text="IGST"
-                                        />
-                                        <Text
-                                            id="_IDGenText4"
-                                            text="{context>/invoiceDetails/IGST}"
-                                        />
-
-                                        <Label
-                                            id="_IDGenLabel4"
-                                            text="CGST"
-                                        />
-                                        <Text
-                                            id="_IDGenText5"
-                                            text="{context>/invoiceDetails/CGST}"
-                                        />
-
-                                        <Label
-                                            id="_IDGenLabel5"
-                                            text="SGST"
-                                        />
-                                        <Text
-                                            id="_IDGenText6"
-                                            text="{context>/invoiceDetails/SGST}"
-                                        />
-                                        <Label
-                                            id="_IDGenLabel7"
-                                            text="Total"
-                                        />
-                                        <Text
-                                            id="_IDGenText7"
-                                            text="{context>/invoiceDetails/grossAmount}"
-                                        />
-                                    </form:SimpleForm>
-                                </FlexBox>
-                            </HBox>
-                        </uxap:ObjectPageSubSection>
-    -->
-
-
+                     
                     </uxap:subSections>
                 </uxap:ObjectPageSection>
             </uxap:sections>

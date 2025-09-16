@@ -73,7 +73,15 @@ sap.ui.define(
 
               var travelDetails = taskContextModel.getProperty("/travelDetails") || {};
              this.setModel(new sap.ui.model.json.JSONModel(travelDetails), "travelDetails");
+
+             console.log("travelExpenses -----------------");
+             console.log(travelExpenses);
+             console.log("travelDetails -----------------");
+             console.log(travelDetails);
+
+
           });
+
 
         },
 

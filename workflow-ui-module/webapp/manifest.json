@@ -5,7 +5,7 @@
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
-            "version": "1.0.1"
+            "version": "1.0.3"
         },
         "title": "{{ appTitle }}",
         "description": "{{ appDescription }}",
@@ -224,7 +224,33 @@
                             "receiptDate": {
                                 "type": "string",
                                 "title": "Receipt Date"
+                            },
+                            "attachments": {
+                                "type": "array",
+                                "title": "Attachments",
+                                "items": {
+                                "type": "object",
+                                    "properties": {
+                                        "name": {
+                                        "type": "string",
+                                        "title": "File Name"
+                                        },
+                                        "type": {
+                                        "type": "string",
+                                        "title": "MIME Type"
+                                        },
+                                        "size": {
+                                        "type": "string",
+                                        "title": "File Size (bytes)"
+                                        }
+                                    }
+                                }
+                             },
+                            "attachmentCount": {
+                                "type": "string",
+                                "title": "Attachment Count"
                             }
+
                         }
                     }
                 }
